@@ -146,7 +146,7 @@ interface IRepo {
   console.log(JSON.stringify(myPet,null,2));
   console.log(`Birthday: ${myPet.calculateAge()}`);
 
-  // gitGotchiRenderer(myPet);
+  gitGotchiRenderer(myPet);
 
   const oneDay = [
     { label: '🌞 Morning', commits: morning },

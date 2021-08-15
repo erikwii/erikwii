@@ -12,18 +12,20 @@ export default function gitGotchiSVG(Pet: any) {
     let content = '';
 
     try {
-        data = readFileSync(resolve(__dirname, '../README.md'), 'utf8');
-    } catch (error) {
-        console.error(error);
-    }
-
-    try {
         svg = readFileSync(resolve(__dirname, '../assets/octocat_idle.svg'), 'utf8');
     } catch (error) {
         console.error(error);
     }
 
-    content += `<div align="center">${svg}</div>`;
+    let greet;
+    const timeString = new Date().toLocaleTimeString('en-US', { hour12: false, timeZone: process.env.TIMEZONE });
+    const hour = +(timeString.split(':')[0]);
+    if (hour >= 6 && hour < 12) greet = "#Good Morning 🌤";
+    else if (hour >= 12 && hour < 18) greet = "#Good Afternoon ☀️";
+    else if (hour >= 18 && hour < 24) greet = "#Good Evening 🌆";
+    else if (hour >= 0 && hour < 6) greet = "#You need to sleep bro! 😴";
+
+    content += `<div align="center">${svg}</div>\n${greet}`;
 
     try {
         const writeData = writeFileSync(resolve(__dirname, '../README.md'), content + "\n" + data);
