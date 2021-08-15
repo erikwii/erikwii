@@ -10,8 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Update gist
-        uses: erikwii/GitGotchi@main
+        uses: erikwii/erikwii@main
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GIST_ID: e0efc53c0f9367d2d0d2039873d352eb
           TIMEZONE: Asia/Jakarta
+          NAME: Dyno
+          MIN_COMMIT_PERIOD: 7 # Can't be zero value
+          MIN_ISSUE_PERIOD: 2 # Can't be zero value 
+          MIN_CODEREVIEW_PERIOD: 2 # Can't be zero value
+          MIN_PULLREQ_PERIOD: 1 # Can't be zero value
