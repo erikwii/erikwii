@@ -20,6 +20,7 @@ jobs:
       - name: build
         run: |
           yarn install
+          npm run dev
           yarn build
       - name: commit change & push
         run: |
