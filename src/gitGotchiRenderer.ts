@@ -1,4 +1,5 @@
 import { resolve } from 'path';
+import path from 'path';
 import { config } from 'dotenv';
 import { readFileSync, writeFileSync } from 'fs';
 /**
@@ -12,7 +13,7 @@ export default function gitGotchiSVG(Pet: any) {
     let content = '';
 
     try {
-        svg = readFileSync('../assets/octocat_idle.svg', 'utf8');
+        svg = readFileSync(path.join(__dirname, '../assets/octocat_idle.svg'), 'utf8');
     } catch (error) {
         console.error(error);
     }
