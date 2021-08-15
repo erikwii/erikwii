@@ -12,7 +12,7 @@ export default function gitGotchiSVG(Pet: any) {
     let content = '';
 
     try {
-        svg = readFileSync(resolve(__dirname, '../assets/octocat_idle.svg'), 'utf8');
+        svg = readFileSync('../assets/octocat_idle.svg', 'utf8');
     } catch (error) {
         console.error(error);
     }
