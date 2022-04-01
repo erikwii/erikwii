@@ -1,2 +1,1 @@
-Hello World! My name is Erik 
-<img src="https://tandatangan.io/img/logo/Logo%20Taio-01.png">
+Hello World! My name is Erik<img src="https://tandatangan.io/img/logo/Logo%20Taio-01.png" width=250 height="auto">
